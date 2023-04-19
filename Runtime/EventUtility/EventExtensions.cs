@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace JescoDev.Utility.SmoothBrainTween.Plugins.Runtime.SmoothBrainTween {
+namespace JescoDev.Utility.EventUtility.EventUtility {
     public static class EventExtensions {
 
         public static void TryInvoke(this Action action) {
