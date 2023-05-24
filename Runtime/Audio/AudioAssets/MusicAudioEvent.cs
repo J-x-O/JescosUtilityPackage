@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Plugins.Audio.AudioManagers;
 
 namespace Beta.Audio {
 
@@ -28,6 +29,7 @@ namespace Beta.Audio {
 
             source.pitch = 1f;
             source.loop = true;
+            source.outputAudioMixerGroup = SoundManager.MusicAudioGroup;
             source.Play();
             
         }

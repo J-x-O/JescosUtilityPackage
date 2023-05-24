@@ -15,12 +15,10 @@ namespace Beta.Audio {
 
         public static MusicManager Instance {
             get {
-                if (_instance == null) {
-                    GameObject manager = new GameObject("Music Manager");
-                    MusicManager script = manager.AddComponent<MusicManager>();
-                    _instance = script;
-                }
-
+                if (_instance != null) return _instance;
+                GameObject manager = new GameObject("Music Manager");
+                MusicManager script = manager.AddComponent<MusicManager>();
+                _instance = script;
                 return _instance;
             }
         }
@@ -32,7 +30,7 @@ namespace Beta.Audio {
         [SerializeField] private float _fadeTime = 0.5f;
 
         /// <summary>Stores references to AudioSources</summary>
-        private SoundSourceWrapper[] _source = new SoundSourceWrapper[2];
+        private readonly SoundSourceWrapper[] _source = new SoundSourceWrapper[2];
 
         /// <summary>Shows if there is already music playing</summary>
         private bool _active = false;

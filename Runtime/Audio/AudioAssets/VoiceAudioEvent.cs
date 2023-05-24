@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GD.MinMaxSlider;
+using Plugins.Audio.AudioManagers;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -33,6 +34,7 @@ namespace Beta.Audio {
             source.clip = _clip;
             source.volume = _volume;
             source.pitch = 1;
+            source.outputAudioMixerGroup = SoundManager.VoicesAudioGroup;
             source.Play();
         }
     }

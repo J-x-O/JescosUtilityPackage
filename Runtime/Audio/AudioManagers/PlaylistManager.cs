@@ -63,7 +63,7 @@ namespace Beta.Audio {
         /// <param name="array">the array which shall be shuffled</param>
         /// <remarks>Nikolas, Erik</remarks>
         private static void FisherYates(MusicAudioEvent[] array) {
-            System.Random r = new System.Random();
+            System.Random r = new();
             for (int i = array.Length - 1; i > 0; i--) {
                 int index = r.Next(i);
                 (array[index], array[i]) = (array[i], array[index]);

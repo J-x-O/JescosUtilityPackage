@@ -34,7 +34,7 @@ namespace Beta.Audio {
 
             source.volume = volume;
             source.pitch = 1f;
-            source.outputAudioMixerGroup = SoundManager.Instance.AmbienceAudioGroup;
+            source.outputAudioMixerGroup = SoundManager.AmbienceAudioGroup;
             source.Play();
         }
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using GD.MinMaxSlider;
+using Plugins.Audio.AudioManagers;
 using UnityEngine.Serialization;
 
 namespace Beta.Audio {
@@ -45,6 +46,7 @@ namespace Beta.Audio {
             source.clip = _clips[Random.Range(0, _clips.Count)];
             source.volume = Random.Range(_volume.x, _volume.y);
             source.pitch = Random.Range(_pitch.x, _pitch.y);
+            source.outputAudioMixerGroup = SoundManager.EffectsAudioGroup;
             source.Play();
         }
     }
