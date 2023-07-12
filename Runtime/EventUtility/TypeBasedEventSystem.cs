@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using JescoDev.Utility.EventUtility.EventUtility;
 
 namespace GameProgramming.Utility.TypeBasedEventSystem {
     
     /// <summary>The custom event system hooking into each <see cref="StatusEffectManager"/>.</summary>
     /// <remarks>Written by Max, Paul, Philipp</remarks>
-    public class TypeBasedEventSystem<T> {
+    public class TypeBasedEventSystem<T> : IReadOnlyTypeBasedEventSystem<T> {
 
         private const int EVENT_START = 0, EVENT_END = 1;
         
