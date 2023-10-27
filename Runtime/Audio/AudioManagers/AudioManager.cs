@@ -90,7 +90,7 @@ namespace Plugins.Audio.AudioManagers {
         private IEnumerator PlayCoroutine(SoundToken token) {
             
             // wait the provided delay
-            yield return new WaitForSeconds(token.Delay);
+            if(!Mathf.Approximately(token.Delay,0)) yield return new WaitForSeconds(token.Delay);
 
             // add SoundSource and play the vfx
             token.Event.Play(token.Source);
