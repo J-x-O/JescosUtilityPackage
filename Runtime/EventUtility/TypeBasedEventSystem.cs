@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using JescoDev.Utility.EventUtility.EventUtility;
 
-namespace GameProgramming.Utility.TypeBasedEventSystem {
+namespace JescoDev.Utility.EventUtility {
     
     /// <summary>The custom event system hooking into each <see cref="StatusEffectManager"/>.</summary>
     /// <remarks>Written by Max, Paul, Philipp</remarks>

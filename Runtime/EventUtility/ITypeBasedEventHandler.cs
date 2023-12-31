@@ -1,4 +1,4 @@
-﻿namespace GameProgramming.Utility.TypeBasedEventSystem {
+﻿namespace JescoDev.Utility.EventUtility {
     
     /// <summary>
     /// Classes which implement this interface can be added as a event handler to a <see cref="TypeBasedEventSystem" />. They therefore define custom
@@ -13,5 +13,18 @@
         /// <summary> Gets called when a status effect is ended </summary>
         /// <param name="instanceOfType"> The active instance, passed in by the event system </param>
         void HandleEndState(T instanceOfType);
+    }
+    
+    /// <summary>
+    /// Classes which implement this interface can be added as a event handler to a <see cref="TypeBasedEventSystem" />. They therefore define custom
+    /// behaviour when a certain effect starts or ends.
+    /// </summary>
+    public interface ITypeBasedEventHandler {
+        
+        /// <summary> Gets called when a status effect is started </summary>
+        void HandleNewState();
+
+        /// <summary> Gets called when a status effect is ended </summary>
+        void HandleEndState();
     }
 }

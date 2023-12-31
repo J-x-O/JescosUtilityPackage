@@ -1,7 +1,6 @@
 ﻿using System;
-using GameProgramming.Utility.TypeBasedEventSystem;
 
-namespace JescoDev.Utility.EventUtility.EventUtility {
+namespace JescoDev.Utility.EventUtility {
     public interface IReadOnlyTypeBasedEventSystem<T> {
 
         public void RegisterHandler(ITypeBasedEventHandler<T> eventHandler, params Type[] subscribedClasses);

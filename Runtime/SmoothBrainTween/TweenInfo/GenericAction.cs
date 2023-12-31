@@ -1,5 +1,5 @@
 ﻿using System;
-using JescoDev.Utility.EventUtility.EventUtility;
+using JescoDev.Utility.EventUtility;
 using UnityEngine;
 
 namespace JescoDev.Utility.SmoothBrainTween.Plugins.Runtime.SmoothBrainTween {

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace JescoDev.Utility.EventUtility.EventUtility {
+namespace JescoDev.Utility.EventUtility {
     public static class EventExtensions {
 
         public static void TryInvoke(this Action action) {

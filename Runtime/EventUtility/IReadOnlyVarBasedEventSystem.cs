@@ -1,7 +1,6 @@
 ﻿using System;
-using GameProgramming.Utility.TypeBasedEventSystem;
 
-namespace JescoDev.Utility.EventUtility.EventUtility {
+namespace JescoDev.Utility.EventUtility {
     public interface IReadOnlyVarBasedEventSystem<TVar, TSub> {
 
         public void RegisterHandler(ITypeBasedEventHandler<TSub> eventHandler, params TVar[] subscribedClasses);
@@ -11,6 +10,13 @@ namespace JescoDev.Utility.EventUtility.EventUtility {
         public void UnregisterHandler(ITypeBasedEventHandler<TSub> eventHandler, params TVar[] subscribedClasses);
         public void UnregisterStartHandler(Action<TSub> eventHandler, params TVar[] subscribedClasses);
         public void UnregisterStopHandler(Action<TSub> eventHandler, params TVar[] subscribedClasses);
+
+    }
+    
+    public interface IReadOnlyVarBasedEventSystem<TVar> {
+
+        public void RegisterHandler(Action eventHandler, params TVar[] subscribedClasses);
+        public void UnregisterHandler(Action eventHandler, params TVar[] subscribedClasses);
 
     }
 }
