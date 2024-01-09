@@ -49,5 +49,7 @@ namespace Beta.Audio {
             source.outputAudioMixerGroup = SoundManager.EffectsAudioGroup;
             source.Play();
         }
+
+        public override bool IsValid() => _clips.Count > 0;
     }
 }

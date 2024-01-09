@@ -37,6 +37,8 @@ namespace Beta.Audio {
             source.outputAudioMixerGroup = SoundManager.VoicesAudioGroup;
             source.Play();
         }
+
+        public override bool IsValid() => _clip != null;
     }
 
 }

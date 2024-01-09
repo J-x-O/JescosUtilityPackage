@@ -33,5 +33,7 @@ namespace Beta.Audio {
             source.Play();
             
         }
+
+        public override bool IsValid() => clip != null;
     }
 }

@@ -35,7 +35,8 @@ namespace Plugins.Audio.AudioManagers {
 
         private AudioSource GetFreeSource() {
             if (_freeSources.TryDequeue(out AudioSource source)) return source;
-            return gameObject.AddComponent<AudioSource>();
+            source = gameObject.AddComponent<AudioSource>();
+            return source;
         }
 
         private void FreeSource(AudioSource source) {
@@ -56,6 +57,11 @@ namespace Plugins.Audio.AudioManagers {
         /// <returns> the token that can be used to cancel the vfx </returns>
         public SoundToken PlaySound(AudioEvent audioEvent, float delay = 0, float fadeDuration = 0, bool loop = false) {
 
+            if (audioEvent == null || !audioEvent.IsValid()) {
+                Debug.LogWarning("AudioEvent is null or invalid");
+                return null;
+            }
+            
             SoundToken token = new SoundToken(audioEvent, GetFreeSource(), delay, fadeDuration, loop);
             Coroutine routine = StartCoroutine(PlayCoroutine(token));
             _runningSfx.Add(token, routine);

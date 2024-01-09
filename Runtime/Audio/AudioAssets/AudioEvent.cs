@@ -9,7 +9,8 @@ namespace Beta.Audio {
         /// <param name="source">AudioSource, on which the event is played</param>
         /// <remarks>Nikolas</remarks>
         public abstract void Play(AudioSource source, bool setVolume = true);
-        
+
+        public abstract bool IsValid();
     }
 }
 
